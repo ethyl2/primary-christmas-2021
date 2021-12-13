@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Picture a Christmas</title>
+    <meta name="description"
+      content="Images for the Primary song Picture a Christmas">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  </head>
+
+    <body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="w-full bg-black min-h-screen" style="font-family: 'Mountains of Christmas', cursive;">
+        <header id="header" class="px-4 py-10 bg-green-900 w-full sticky text-white">
+            <h1 class="text-center text-2xl font-bold md:text-5xl pb-4">Picture a Christmas</h1>
+            <h1 class="text-center text-xl font-bold md:text-3xl">Click on the red words as you sing to see pictures of the people and symbols.</h1>
+        </header>
+        <main
+            aria-hidden="true"
+        >
+        <div class="pt-4 font-sans text-white text-center">
+
+            <div x-data="{ show: false }" class="flex items-center justify-center pb-2">
+                <div class="flex flex-col items-center justify-center md:flex-row">
+                    <p>1. Picture a</p>
+                    <button
+                        @click="show = ! show"
+                        class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-green-500 hover:text-white"
+                        type="button"
+                    >
+                        stable
+                    </button>
+                    <p>in Judea.</p>
+                </div> 
+                <div class="w-32 h-32 md:w-48 md:h-48">
+                    <div
+                        class="bg-green-400 w-full h-full bg-cover bg-center"
+                        style="background-image: url('./pac/stable.jpeg')"
+                        x-show="show"
+                        x-transition:enter="transition transform duration-500"
+                        x-transition:enter-start="opacity-0 scale-0"
+                        x-transition:leave="transition transform duration-500"
+                        x-transition:leave-end="opacity-0 scale-0">
+                    </div>
+                </div>
+            </div>
+            
+            <div x-data="{ show: false }" class="flex items-center justify-center">
+                <div class="w-32 h-32 md:w-48 md:h-48">
+                    <div
+                        class="bg-green-400 w-full h-full bg-cover bg-center"
+                        style="background-image: url('./pac/night.jpeg')"
+                        x-show="show"
+                        x-transition:enter="transition transform duration-500"
+                        x-transition:enter-start="opacity-0 scale-0"
+                        x-transition:leave="transition transform duration-500"
+                        x-transition:leave-end="opacity-0 scale-0">
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center pl-2 md:flex-row">
+                    <p>Picture a sacred, silent</p>
+                    <button
+                        @click="show = ! show"
+                        class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-green-500 hover:text-white"
+                        type="button"
+                    >
+                        night.
+                    </button>
+                </div> 
+            </div>
+
+           
+            <p>And can you hear the angels near</p>
+            <p>And see the star so bright?</p>
+            <p class="italic pt-2">Chorus:</p>
+            <p>Picture the little baby Jesus.</p>
+            <p>Think of his life and words so dear.</p>
+            <p>Sing praise to him; Remember him,</p>
+            <p>As you picture Christmas this year.</p>
+
+            <p class="pt-2">2.  Picture the kind and gentle Joseph.</p>
+            <p>Picture the mother, Mary, fair.</p>
+            <p>And can you see so rev’rently</p>
+            <p>The shepherds kneeling there?</p>
+            <p class="italic pt-2">Chorus</p>
+            </div>
+        
+            </main>
+        <footer class="relative mt-12 w-full bg-red-500 h-28">
+            <div class="flex items-center justify-center space-x-3 pt-10">
+            <p class="flex items-center justify-center font-semibold text-white text-lg"><span id="year" class="pr-1">2021</span>
+                <a href="https://github.com/ethyl2" target="_blank" rel="noopener noreferrer">Heather Nuffer</a>
+            </p>
+            </div>
+        </footer>
+        <script type="text/javascript">
+            const yearEl = document.getElementById('year')
+            const currentYear = new Date().getFullYear();
+            yearEl.textContent = currentYear
+        </script>
+  </body>
+
+</html>
