@@ -27,84 +27,426 @@
         <div class="w-full bg-black min-h-screen" style="font-family: 'Mountains of Christmas', cursive;">
         <header id="header" class="px-4 py-10 bg-green-900 w-full sticky text-white">
             <h1 class="text-center text-2xl font-bold md:text-5xl pb-4">Picture a Christmas</h1>
-            <h1 class="text-center text-xl font-bold md:text-3xl">Click on the red words as you sing to see pictures of the people and symbols.</h1>
+            <h1 class="text-center text-lg font-bold md:text-2xl">Click on the red words as you sing to see pictures of the people and symbols.</h1>
         </header>
         <main
             aria-hidden="true"
         >
-        <div class="pt-4 font-sans text-white text-center">
+        <div class="pt-4 mb-8 font-sans text-white text-center">
+            <!-- VERSE 1 -->
+            <div class="rounded border border-white m-2 mb-8 md:w-1/2 md:mx-auto md:p-4">
+               
+                <div x-data="{ show: false }" class="flex items-center justify-center pb-2">
+                    <div class="flex flex-col items-center justify-center mr-2 md:mr-0 md:flex-row">
+                        <p>1. Picture a</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-white focus:bg-gray-900"  
+                            type="button"
+                        >
+                            stable
+                        </button>
+                        <p>in Judea.</p>
+                    </div> 
+                    <div class="w-32 h-32 rounded mt-2 md:w-48 md:h-48 md:mt-0">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/stable.png')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                </div>
+                
+                <div x-data="{ show: false }" class="flex items-center justify-center">
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/night.png')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center pl-2 md:flex-row">
+                        <p>Picture a sacred, silent</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-green-500 hover:text-white focus:bg-gray-900"
+                            type="button"
+                        >
+                            night.
+                        </button>
+                    </div> 
+                </div>
 
-            <div x-data="{ show: false }" class="flex items-center justify-center pb-2">
-                <div class="flex flex-col items-center justify-center md:flex-row">
-                    <p>1. Picture a</p>
-                    <button
-                        @click="show = ! show"
-                        class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-green-500 hover:text-white"
-                        type="button"
-                    >
-                        stable
-                    </button>
-                    <p>in Judea.</p>
-                </div> 
-                <div class="w-32 h-32 md:w-48 md:h-48">
-                    <div
-                        class="bg-green-400 w-full h-full bg-cover bg-center"
-                        style="background-image: url('./pac/stable.jpeg')"
-                        x-show="show"
-                        x-transition:enter="transition transform duration-500"
-                        x-transition:enter-start="opacity-0 scale-0"
-                        x-transition:leave="transition transform duration-500"
-                        x-transition:leave-end="opacity-0 scale-0">
+                <div x-data="{ show: false }" class="flex items-center justify-center pb-2">
+                    <div class="flex flex-col items-center justify-center mr-2">
+                        <div class="flex flex-col items-center justify-center pb-2 md:flex-row">
+                            <p>And can you hear the</p>
+                            <button
+                                @click="show = ! show"
+                                class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-white focus:bg-gray-900"  
+                                type="button"
+                            >
+                                angels
+                            </button>
+                            <p class="pr-2">near</p>
+                        </div>
+                        <audio controls class="hidden md:block">
+                            <source src="./pac/hallelujah.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div> 
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/angels.png')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                </div>
+
+                <audio controls class="pb-2 mx-auto md:hidden">
+                    <source src="./pac/hallelujah.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <div x-data="{ show: false }" class="flex items-center justify-center">
+                    <div class="w-32 h-32 rounded mb-2 md:w-48 md:h-48 md:mb-0">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/star.png')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center pl-2 md:flex-row">
+                        <p>And see the</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-green-500 hover:text-white focus:bg-gray-900"
+                            type="button"
+                        >
+                            star
+                        </button>
+                        <p class="pr-2">so bright?</p>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- CHORUS -->
+            <div class="rounded border border-white p-2 m-2 mb-8 md:w-1/2 md:mx-auto md:p-4">
+               
+                <div x-data="{ show: false }" class="flex items-center justify-center pb-2">
+                    <div class="flex flex-col items-center justify-center mr-2 md:mr-0 md:flex-row">
+                        <p>Picture the little </p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-white focus:bg-gray-900"  
+                            type="button"
+                        >
+                            baby Jesus.
+                        </button>
+                    </div> 
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/babyJesus.png')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                </div>
+                
+                <div x-data="{ show: false }" class="flex items-center justify-center">
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/life.png')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center pl-2 md:flex-row">
+                        <p>Think of his life</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-green-500 hover:text-white focus:bg-gray-900"
+                            type="button"
+                        >
+                           life
+                        </button>
+                        <p>and words so dear.</p>
+                    </div> 
+                </div>
+
+                <div x-data="{ show: false }" class="flex items-center justify-center pb-2">
+                    <div class="flex flex-col items-center justify-center mr-2 md:mr-0 md:flex-row">
+                        <p>Sing praise to him; Remember</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-white focus:bg-gray-900"  
+                            type="button"
+                        >
+                           him
+                        </button>
+                        
+                    </div> 
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/jesus2.jpeg')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                </div>
+                
+                <div x-data="{ show: false }" class="flex items-center justify-center">
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/christmas.jpg')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center pl-2 md:flex-row">
+                        <p>As you picture</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-green-500 hover:text-white focus:bg-gray-900"
+                            type="button"
+                        >
+                            Christmas
+                        </button>
+                        <p class="pr-2">this year.</p>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- VERSE 2 -->
+            <div class="rounded border border-white p-2 m-2 mb-8 md:w-1/2 md:mx-auto md:p-4">
+               
+                <div x-data="{ show: false }" class="flex items-center justify-center pb-2">
+                    <div class="flex flex-col items-center justify-center mr-2 md:mr-0 md:flex-row">
+                        <p>2. Picture the kind and gentle</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-white focus:bg-gray-900"  
+                            type="button"
+                        >
+                            Joseph.
+                        </button>
+                    </div> 
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/joseph.png')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                </div>
+                
+                <div x-data="{ show: false }" class="flex items-center justify-center">
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/mary.jpeg')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center pl-2 md:flex-row">
+                        <p>Picture the mother,</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-green-500 hover:text-white focus:bg-gray-900"
+                            type="button"
+                        >
+                           Mary,
+                        </button>
+                        <p> fair.</p>
+                    </div> 
+                </div>
+
+                <div x-data="{ show: false }" class="flex items-center justify-center pb-2">
+                    <div class="flex flex-col items-center justify-center mr-2">
+                        <p>And can you see so rev’rently the</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-white focus:bg-gray-900"  
+                            type="button"
+                        >
+                            shepherds
+                        </button>
+                        <p class="pr-2">kneeling there?</p>
+                    </div> 
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/shepherds.png')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div x-data="{ show: false }" class="flex items-center justify-center">
-                <div class="w-32 h-32 md:w-48 md:h-48">
-                    <div
-                        class="bg-green-400 w-full h-full bg-cover bg-center"
-                        style="background-image: url('./pac/night.jpeg')"
-                        x-show="show"
-                        x-transition:enter="transition transform duration-500"
-                        x-transition:enter-start="opacity-0 scale-0"
-                        x-transition:leave="transition transform duration-500"
-                        x-transition:leave-end="opacity-0 scale-0">
+
+            <!-- CHORUS -->
+            <div class="rounded border border-white p-2 m-2 mb-8 md:w-1/2 md:mx-auto md:p-4">
+               
+                <div x-data="{ show: false }" class="flex items-center justify-center pb-2">
+                    <div class="flex flex-col items-center justify-center mr-2 md:mr-0 md:flex-row">
+                        <p>Picture the little </p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-white focus:bg-gray-900"  
+                            type="button"
+                        >
+                            baby Jesus.
+                        </button>
+                    </div> 
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/babyJesus2.jpeg')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
                     </div>
                 </div>
-                <div class="flex flex-col items-center justify-center pl-2 md:flex-row">
-                    <p>Picture a sacred, silent</p>
-                    <button
-                        @click="show = ! show"
-                        class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-green-500 hover:text-white"
-                        type="button"
-                    >
-                        night.
-                    </button>
-                </div> 
+                
+                <div x-data="{ show: false }" class="flex items-center justify-center">
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/life2.png')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center pl-2 md:flex-row">
+                        <p>Think of his life</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-green-500 hover:text-white focus:bg-gray-900"
+                            type="button"
+                        >
+                           life
+                        </button>
+                        <p>and words so dear.</p>
+                    </div> 
+                </div>
+
+                <div x-data="{ show: false }" class="flex items-center justify-center pb-2">
+                    <div class="flex flex-col items-center justify-center mr-2 md:mr-0 md:flex-row">
+                        <p>Sing praise to him; Remember</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-white focus:bg-gray-900"  
+                            type="button"
+                        >
+                           him
+                        </button>
+                        
+                    </div> 
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/jesus.png')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                </div>
+                
+                <div x-data="{ show: false }" class="flex items-center justify-center">
+                    <div class="w-32 h-32 rounded md:w-48 md:h-48">
+                        <div
+                            class="bg-green-400 w-full h-full bg-cover bg-center rounded"
+                            style="background-image: url('./pac/christmas2.jpeg')"
+                            x-show="show"
+                            x-transition:enter="transition transform duration-500"
+                            x-transition:enter-start="opacity-0 scale-0"
+                            x-transition:leave="transition transform duration-500"
+                            x-transition:leave-end="opacity-0 scale-0">
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center pl-2 md:flex-row">
+                        <p>As you picture</p>
+                        <button
+                            @click="show = ! show"
+                            class="p-2 mx-2 border rounded inline font-bold text-red-500 hover:bg-green-500 hover:text-white focus:bg-gray-900"
+                            type="button"
+                        >
+                            Christmas
+                        </button>
+                        <p class="pr-2">this year.</p>
+                    </div> 
+                </div>
             </div>
-
-           
-            <p>And can you hear the angels near</p>
-            <p>And see the star so bright?</p>
-            <p class="italic pt-2">Chorus:</p>
-            <p>Picture the little baby Jesus.</p>
-            <p>Think of his life and words so dear.</p>
-            <p>Sing praise to him; Remember him,</p>
-            <p>As you picture Christmas this year.</p>
-
-            <p class="pt-2">2.  Picture the kind and gentle Joseph.</p>
-            <p>Picture the mother, Mary, fair.</p>
-            <p>And can you see so rev’rently</p>
-            <p>The shepherds kneeling there?</p>
-            <p class="italic pt-2">Chorus</p>
             </div>
         
             </main>
         <footer class="relative mt-12 w-full bg-red-500 h-28">
-            <div class="flex items-center justify-center space-x-3 pt-10">
-            <p class="flex items-center justify-center font-semibold text-white text-lg"><span id="year" class="pr-1">2021</span>
-                <a href="https://github.com/ethyl2" target="_blank" rel="noopener noreferrer">Heather Nuffer</a>
-            </p>
+            <div class="flex flex-col items-center justify-center pt-10">
+                <p class="flex items-center justify-center font-semibold text-white text-lg"><span id="year" class="pr-1">2021</span>
+                    <a href="https://github.com/ethyl2" target="_blank" rel="noopener noreferrer">Heather Nuffer</a>
+                </p>
+                <p class="font-sans text-sm italic">The angel audio is from 
+                    <a 
+                        href="https://freesound.org/people/klankbeeld/sounds/189961/"
+                        target="_blank"
+                        class="hover:underline"
+                    >
+                        klankbeeld.
+                    </a>
+                </p>
             </div>
         </footer>
         <script type="text/javascript">
