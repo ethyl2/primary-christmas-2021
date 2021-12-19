@@ -12,12 +12,16 @@
     <meta name="description"
       content="Play Christmas bells to get into the holiday spirit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico?">
+    <style>
+        button:active {
+            margin-top: 25px;
+        }
+    </style>
   </head>
 
   <body>
@@ -25,64 +29,276 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="w-full min-h-screen bg-black" style="font-family: 'Mountains of Christmas', cursive;">
-        <header id="header" class="sticky w-full px-4 py-10 text-white bg-green-900">
+        <header id="header" class="sticky w-full px-4 py-6 text-white bg-green-900 md:py-10">
             <h1 class="pb-4 text-2xl font-bold text-center md:text-5xl">Christmas Bells</h1>
-            <h1 class="text-xl font-bold text-center md:text-3xl">Click on the Bells to Hear Them Sing</h1>
+            <h2 class="text-xl font-bold text-center md:text-3xl">Ring the Bells to Hear What They Say to You</h2>
         </header>
+        <div class="flex items-center justify-center h-12 text-xl text-center text-green-400 md:text-2xl">
+            <h3 id="message"></h2>
+        </div>
+        
         <main
-            class="flex flex-wrap items-center justify-center pt-6 snowflakes"
+            class="flex flex-wrap items-center justify-center pt-2 md:pt-6"
             aria-hidden="true"
         >
-            <div 
-                class="flex items-center justify-center w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
-                style="background-image: url('./bells/images/bell1.png');"
-                onclick="playSound(0)"
-            >
+            <!-- HANDBELL CHROMATIC SCALE -->
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell5.png');"
+                    onclick="playSound(24)"
+                >C
+                </button>
             </div>
 
-            <div 
-                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
-                style="background-image: url('./bells/images/bell2.png');"
-                onclick="playSound(1)"
-            >
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell6.png');"
+                    onclick="playSound(12)"
+                >C#
+                </button>
             </div>
 
-            <div 
-                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64"
-                style="background-image: url('./bells/images/bell3.png');"
-                onclick="playSound(2)"
-            ></div>
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell7.png');"
+                    onclick="playSound(13)"
+                >D
+                </button>
+            </div>
 
-            <div 
-                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
-                style="background-image: url('./bells/images/bell1.png');"
-                onclick="playSound(3)"
-            ></div>
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell6.png');"
+                    onclick="playSound(20)"
+                >D#
+                </button>
+            </div>
 
-            <div 
-                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
-                style="background-image: url('./bells/images/bell3.png'); transform: scaleX(-1);"
-            ></div>
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell5.png');"
+                    onclick="playSound(22)"
+                >E
+                </button>
+            </div>
 
-            <div 
-                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
-                style="background-image: url('./bells/images/bell2.png'); transform: scaleX(-1);"
-            ></div>
-            <div 
-                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
-                style="background-image: url('./bells/images/bell1.png');"
-            >
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell6.png');"
+                    onclick="playSound(17)"
+                >F
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell7.png');"
+                    onclick="playSound(21)"
+                >F#
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell6.png');"
+                    onclick="playSound(23)"
+                >G
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell5.png');"
+                    onclick="playSound(16)"
+                >G#
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell6.png');"
+                    onclick="playSound(18)"
+                >A
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell7.png');"
+                    onclick="playSound(19)"
+                >A#
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell6.png');"
+                    onclick="playSound(14)"
+                >B
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell5.png');"
+                    onclick="playSound(15)"
+                >C
+                </button>
+            </div>
+
+            <!-- END HANDBELL CHROMATIC SCALE -->
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell3.png');"
+                    onclick="playSound(10)"
+                >
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    style="background-image: url('./bells/images/bell2.png');"
+                    type="button"
+                    onclick="playSound(1)"
+                >B
+                </button>
+            </div>
+            
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48"
+                    style="background-image: url('./bells/images/bell3.png');"
+                    type="button"
+                    onclick="playSound(2)"
+                ></button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    style="background-image: url('./bells/images/bell2.png');"
+                    type="button"
+                    onclick="playSound(3)"
+                >G#</button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    style="background-image: url('./bells/images/bell4.png');"
+                    type="button"
+                    onclick="playSound(4)"
+                >~ A</button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    style="background-image: url('./bells/images/bell1.png');"
+                    type="button"
+                    onclick="playSound(5)"
+                >C#</button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell4.png');"
+                    onclick="playSound(6)"
+                >F
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    style="background-image: url('./bells/images/bell2.png');"
+                    type="button"
+                    onclick="playSound(0)"
+                >C
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell4.png');"
+                    onclick="playSound(7)"
+                >~ C
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell2.png');"
+                    onclick="playSound(8)"
+                >E
+                </button>
+            </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell3.png');"
+                    onclick="playSound(9)"
+                >A
+                </button>
+            </div> 
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell6.png');"
+                    onclick="playSound(11)"
+                >G
+                </button>
             </div>
         </main>
-        <footer class="relative flex flex-col items-center justify-center w-full mt-12 bg-red-500 h-36">
+        <footer class="relative flex flex-col items-center justify-center w-full mt-12 bg-red-500 h-60 md:h-44">
             <div class="flex items-center justify-center pt-10 space-x-3">
                 <p class="flex items-center justify-center text-lg font-semibold text-white"><span id="year" class="pr-1">2021</span>
                     <a href="https://github.com/ethyl2" target="_blank" rel="noopener noreferrer" class="hover:underline">Heather Nuffer</a>
                 </p>
             </div>
-            <div class="pb-4 font-bold text-center">
-                <p>Sounds are from <a href="https://freesound.org/" target="_blank" class="hover:underline">freeSound:</a></p>
-                <ul class="flex items-center justify-center divide-x-2 divide-red-600 divide-solid">
+            <div class="pt-2 pb-4 font-bold text-center">
+                <p class="pb-2">Audio is from <a href="https://freesound.org/" target="_blank" class="hover:underline">freeSound:</a></p>
+                <ul class="flex flex-wrap items-center justify-center px-2 text-xs divide-x-2 divide-red-600 divide-solid md:text-sm">
                     <li>
                         <a 
                             href="https://freesound.org/people/erickvillegas1986/sounds/414316/"
@@ -114,30 +330,262 @@
                         <a  
                             href="https://freesound.org/people/moire/sounds/135129/" 
                             target="_blank"
-                            class="ml-2 hover:underline"
+                            class="m-2 hover:underline"
                         >
                             Little Brass Bell
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/acclivity/sounds/32304/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Ship's Bell
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/dsp9000/sounds/76405/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Old Church Bell
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/chimerical/sounds/106544/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Marble Church Bells
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/danarobinsondesignsgmailcom/sounds/377639/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Bells 15
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/danarobinsondesignsgmailcom/sounds/377639/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Bells 22
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/klankschap/sounds/111050/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            X-Mas Bells
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/oontzru/sounds/100808/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Orthodox Christmas Bells
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/oontzru/sounds/100808/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Bells
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448497/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell C#
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448501/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell D
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448498/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell B
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448503/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell C Top
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448507/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell G#
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448508/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell F
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448499/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell A
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448500/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell A#
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448502/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell D#
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448506//" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell E
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448505/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell F#
+                        </a>
+                    </li>
+
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448510/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Handbell G
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/Faranta/sounds/448504/" 
+                            target="_blank"
+                            class="ml-2 hover:underline"
+                        >
+                            Handbell C Bottom
                         </a>
                     </li>
                 </ul>
             </div>
         </footer>
         <script type="text/javascript">
-            const sounds = ['./bells/sounds/bell1.wav', './bells/sounds/bell2.wav', './bells/sounds/bell3.wav', './bells/sounds/bell4.mp3']
+            const sounds = [
+                './bells/sounds/bell1.wav', 
+                './bells/sounds/bell2.wav', 
+                './bells/sounds/bell3.wav', 
+                './bells/sounds/bell4.mp3',
+                './bells/sounds/bell5.wav',
+                './bells/sounds/bell6.wav',
+                './bells/sounds/bell7.wav',
+                './bells/sounds/bell8.mp3',
+                './bells/sounds/bell9.mp3',
+                './bells/sounds/bell10.wav',
+                './bells/sounds/bell11.mp3',
+                './bells/sounds/bell12.wav',
+                './bells/sounds/bellcsharp.mp3',
+                './bells/sounds/handbelld.mp3',
+                './bells/sounds/handbellb.mp3',
+                './bells/sounds/handbellctop.mp3',
+                './bells/sounds/handbellgsharp.mp3',
+                './bells/sounds/handbellf.mp3',
+                './bells/sounds/handbella.mp3',
+                './bells/sounds/handbellasharp.mp3',
+                './bells/sounds/handbelldsharp.mp3',
+                './bells/sounds/handbellfsharp.mp3',
+                './bells/sounds/handbelle.mp3',
+                './bells/sounds/handbellg.mp3',
+                './bells/sounds/handbellcbottom.mp3'
+            ]
             function playSound(soundIndex) {
                 const audio = new Audio(sounds[soundIndex])
                 audio.play()
             }
-            const snowflakesContainer = document.getElementsByClassName('snowflakes')[0]
-            for (let i=0; i<10; i++) {
-                const snowflakeEl = document.createElement('div')
-                snowflakeEl.textContent = '❆'
-                snowflakeEl.classList.add('snowflake', 'select-none', 'fixed', 'z-50', 'cursor-default', '-top-10')
-                snowflakesContainer.appendChild(snowflakeEl)
-            }
+            
             const yearEl = document.getElementById('year')
             const currentYear = new Date().getFullYear();
             yearEl.textContent = currentYear
+
+            const messageEl = document.getElementById('message')
+            const bellEls = document.getElementsByTagName('button')
+            let messageIsToggled = false
+            Array.from(bellEls).forEach(bellEl => {
+                bellEl.addEventListener('click', () => {
+                    if (!messageIsToggled) {
+                        messageEl.textContent = '"Jesus is born in Bethlehem!"'
+                        messageIsToggled = true
+                    }
+                })
+            })
         </script>
       
   </body>
