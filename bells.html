@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Christmas Bells</title>
+    <meta name="description"
+      content="Play Christmas bells to get into the holiday spirit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?">
+  </head>
+
+  <body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="w-full min-h-screen bg-black" style="font-family: 'Mountains of Christmas', cursive;">
+        <header id="header" class="sticky w-full px-4 py-10 text-white bg-green-900">
+            <h1 class="pb-4 text-2xl font-bold text-center md:text-5xl">Christmas Bells</h1>
+            <h1 class="text-xl font-bold text-center md:text-3xl">Click on the Bells to Hear Them Sing</h1>
+        </header>
+        <main
+            class="flex flex-wrap items-center justify-center pt-6 snowflakes"
+            aria-hidden="true"
+        >
+            <div 
+                class="flex items-center justify-center w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
+                style="background-image: url('./bells/images/bell1.png');"
+                onclick="playSound(0)"
+            >
+            </div>
+
+            <div 
+                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
+                style="background-image: url('./bells/images/bell2.png');"
+                onclick="playSound(1)"
+            >
+            </div>
+
+            <div 
+                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64"
+                style="background-image: url('./bells/images/bell3.png');"
+                onclick="playSound(2)"
+            ></div>
+
+            <div 
+                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
+                style="background-image: url('./bells/images/bell1.png');"
+                onclick="playSound(3)"
+            ></div>
+
+            <div 
+                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
+                style="background-image: url('./bells/images/bell3.png'); transform: scaleX(-1);"
+            ></div>
+
+            <div 
+                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
+                style="background-image: url('./bells/images/bell2.png'); transform: scaleX(-1);"
+            ></div>
+            <div 
+                class="w-32 h-32 bg-center bg-no-repeat bg-cover md:w-64 md:h-64" 
+                style="background-image: url('./bells/images/bell1.png');"
+            >
+            </div>
+        </main>
+        <footer class="relative flex flex-col items-center justify-center w-full mt-12 bg-red-500 h-36">
+            <div class="flex items-center justify-center pt-10 space-x-3">
+                <p class="flex items-center justify-center text-lg font-semibold text-white"><span id="year" class="pr-1">2021</span>
+                    <a href="https://github.com/ethyl2" target="_blank" rel="noopener noreferrer" class="hover:underline">Heather Nuffer</a>
+                </p>
+            </div>
+            <div class="pb-4 font-bold text-center">
+                <p>Sounds are from <a href="https://freesound.org/" target="_blank" class="hover:underline">freeSound:</a></p>
+                <ul class="flex items-center justify-center divide-x-2 divide-red-600 divide-solid">
+                    <li>
+                        <a 
+                            href="https://freesound.org/people/erickvillegas1986/sounds/414316/"
+                            target="_blank"
+                            class="mr-2 hover:underline"
+                        >   
+                            Christmas Bell 4
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            href="https://freesound.org/people/steffcaffrey/sounds/452379/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >   
+                            Small Bell #2
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            href="https://freesound.org/people/Tek222EFX/sounds/444891/" 
+                            target="_blank"
+                            class="m-2 hover:underline"
+                        >
+                            Chiming Bells Christmas Eve
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/moire/sounds/135129/" 
+                            target="_blank"
+                            class="ml-2 hover:underline"
+                        >
+                            Little Brass Bell
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        <script type="text/javascript">
+            const sounds = ['./bells/sounds/bell1.wav', './bells/sounds/bell2.wav', './bells/sounds/bell3.wav', './bells/sounds/bell4.mp3']
+            function playSound(soundIndex) {
+                const audio = new Audio(sounds[soundIndex])
+                audio.play()
+            }
+            const snowflakesContainer = document.getElementsByClassName('snowflakes')[0]
+            for (let i=0; i<10; i++) {
+                const snowflakeEl = document.createElement('div')
+                snowflakeEl.textContent = '❆'
+                snowflakeEl.classList.add('snowflake', 'select-none', 'fixed', 'z-50', 'cursor-default', '-top-10')
+                snowflakesContainer.appendChild(snowflakeEl)
+            }
+            const yearEl = document.getElementById('year')
+            const currentYear = new Date().getFullYear();
+            yearEl.textContent = currentYear
+        </script>
+      
+  </body>
+
+</html>
