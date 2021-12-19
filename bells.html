@@ -293,6 +293,16 @@
                 >G
                 </button>
             </div>
+
+            <div class="flex items-center justify-center w-24 h-24 md:w-56 md:h-56">
+                <button 
+                    class="w-20 h-20 pt-4 font-bold bg-center bg-no-repeat bg-cover md:w-48 md:h-48" 
+                    type="button"
+                    style="background-image: url('./bells/images/bell3.png');"
+                    onclick="playSound(25)"
+                >
+                </button>
+            </div>
         </main>
         <footer class="relative flex flex-col items-center justify-center w-full mt-12 bg-red-500 h-60 md:h-44">
             <div class="flex items-center justify-center pt-10 space-x-3">
@@ -534,9 +544,18 @@
                         <a  
                             href="https://freesound.org/people/Faranta/sounds/448504/" 
                             target="_blank"
-                            class="ml-2 hover:underline"
+                            class="m-2 hover:underline"
                         >
                             Handbell C Bottom
+                        </a>
+                    </li>
+                    <li>
+                        <a  
+                            href="https://freesound.org/people/acclivity/sounds/161920/" 
+                            target="_blank"
+                            class="ml-2 hover:underline"
+                        >
+                           Olympic Bells
                         </a>
                     </li>
                 </ul>
@@ -568,7 +587,8 @@
                 './bells/sounds/handbellfsharp.mp3',
                 './bells/sounds/handbelle.mp3',
                 './bells/sounds/handbellg.mp3',
-                './bells/sounds/handbellcbottom.mp3'
+                './bells/sounds/handbellcbottom.mp3',
+                './bells/sounds/bellsolympic.mp3'
             ]
             function playSound(soundIndex) {
                 const audio = new Audio(sounds[soundIndex])
